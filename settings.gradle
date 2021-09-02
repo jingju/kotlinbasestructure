@@ -1,2 +1,4 @@
+include ':networklibrary'
+include ':baselibrary'
 include ':app'
 rootProject.name = "kotlinbasesture"
