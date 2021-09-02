@@ -3,7 +3,7 @@
 2、在RetrofitManager的扩展方法 requst 里面，通过try catche 统一封装非服务器返回的错误
 
 
-3、通过 通过flow可以转换数据
+3、通过flow可以转换数据
 
 
 4、同步之面酷和在线里面一些特殊的处理的地方，如 用户token 国旗等等。

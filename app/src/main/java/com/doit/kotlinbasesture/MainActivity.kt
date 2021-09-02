@@ -18,11 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val service = RetrofitManager.getService(LoginService::class.java)
 
-        // TODO: 8/13/21 通过await方法来做封装
-        service.login().awaitResponse().let {
-            //todo 这里封装response
-
-        }
     }
+}

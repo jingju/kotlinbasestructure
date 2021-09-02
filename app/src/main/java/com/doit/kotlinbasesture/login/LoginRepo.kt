@@ -14,12 +14,11 @@ class LoginRepo : BaseRepository(){
      */
 
     suspend fun login(userName:String,password:String,liveData:StateLiveData<UserInfoBean>){
-        //todo 关注下，这种class的写法。
         var body:String=""
         var mediaType:String="application/json; charset=utf-8"
         var requestBody =body.toRequestBody(mediaType.toMediaType())
 
-
+        //todo 关注下，这种class的写法。
         RetrofitManager.request({RetrofitManager.getService(LoginApi::class.java).login(requestBody)}
         ,liveData)
     }

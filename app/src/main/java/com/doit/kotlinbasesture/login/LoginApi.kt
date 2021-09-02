@@ -1,6 +1,5 @@
 package com.doit.kotlinbasesture.login
 
-import com.doit.kotlinbasesture.bean.LoginBean
 import com.doit.kotlinbasesture.bean.RegistBean
 import com.doit.networklibrary.BaseResponse
 import okhttp3.RequestBody
