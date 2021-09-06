@@ -24,7 +24,7 @@ class LoginViewModel:BaseViewModel(){
     fun login(){
         viewModelScope.launch {
             // TODO: 2021/8/24 livedata
-            mLoginRepo.login("","",mLoginLiveData);
+            mLoginRepo.login("18611641038","111111",mLoginLiveData);
         }
     }
 }

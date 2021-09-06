@@ -1,5 +1,6 @@
 1、自定义Observer，增加成功和错误的回调用
 
+
 2、在RetrofitManager的扩展方法 requst 里面，通过try catche 统一封装非服务器返回的错误
 
 

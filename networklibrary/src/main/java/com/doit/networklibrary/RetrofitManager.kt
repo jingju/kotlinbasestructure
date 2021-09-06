@@ -1,6 +1,7 @@
 package com.doit.networklibrary
 
 import android.util.Log
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,12 +11,24 @@ import java.util.concurrent.TimeUnit
 private const val TAG = "RetrofitManager"
 
 object RetrofitManager {
+   private val  url:String="";//todo 加上自己的uri就可以了
 
     private val mOkClient = OkHttpClient.Builder()
         .callTimeout(10, TimeUnit.SECONDS)
         .connectTimeout(10, TimeUnit.SECONDS)
         .readTimeout(10, TimeUnit.SECONDS)
         .writeTimeout(10, TimeUnit.SECONDS)
+        .addInterceptor(Interceptor {
+            val original = it.request()
+            val builder= original.newBuilder()
+                .addHeader("token", "")
+                .addHeader("cv", "")
+                .addHeader("terminal", "1")
+                .addHeader("pm", "")
+
+            it.proceed(builder.build())
+
+        })
         .retryOnConnectionFailure(true)
         .followRedirects(false)
         .addInterceptor(HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
@@ -26,11 +39,13 @@ object RetrofitManager {
         }).setLevel(HttpLoggingInterceptor.Level.BODY)).build()
 
     private var mRetrofit: Retrofit? = null
-
+    init {
+        initRetrofit()
+    }
 
     fun initRetrofit(): RetrofitManager {
         mRetrofit = Retrofit.Builder()
-            .baseUrl("https://www.wanandroid.com")
+            .baseUrl(url)
             .client(mOkClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -69,7 +84,7 @@ suspend fun <T> RetrofitManager.request(block:suspend ()->BaseResponse<T>,
 
         //todo  code 只做一些特殊的处理，其它都是正常的
 
-        if (baseResp.code == 0) {
+        if (baseResp.code == 1000000) {
             //请求成功，判断数据是否为空，
             //因为数据有多种类型，需要自己设置类型进行判断
 
@@ -80,15 +95,16 @@ suspend fun <T> RetrofitManager.request(block:suspend ()->BaseResponse<T>,
 //                //请求成功并且数据为空的情况下，为STATE_SUCCESS
 //                baseResp.dataState = DataState.STATE_SUCCESS
 //            }
+            baseResp.state=DataState.STATE_SUCCESS
 
         } else {
             //todo 服务器请求错误，也封装成error，在也面活这统一处理
-
-//            baseResp.dataState = DataState.STATE_FAILED
+            baseResp.state = DataState.STATE_FAILED
         }
     } catch (e: Exception) {
         //todo 非后台返回错误，捕获到的异常
-//        baseResp.dataState = DataState.STATE_ERROR
+            //todo [text={"data":null,"message":"非法的参数","code":1000101}]后台的非法参数也按错误返回了
+        baseResp.state = DataState.STATE_FAILED
 //        baseResp.error = e
     } finally {
         stateLiveData.postValue(baseResp)

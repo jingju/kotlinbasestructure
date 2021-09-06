@@ -12,11 +12,11 @@ open class MultiStateObserver<T> : Observer<BaseResponse<T>>{
          * 3、数据为null或者为空的回调
          */
         when(t?.state){
-                0->{//失败
+                DataState.STATE_FAILED->{//失败
                     onFailed()
                 }
 
-               1->{//成功
+               DataState.STATE_SUCCESS->{//成功
                    onDataChange(t.data)
                }
         }
@@ -30,7 +30,7 @@ open class MultiStateObserver<T> : Observer<BaseResponse<T>>{
 
     }
 
-    fun onFailed(){
+    open fun onFailed(){
 
     }
 

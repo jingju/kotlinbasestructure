@@ -1,18 +1,27 @@
 package com.doit.kotlinbasesture.login
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.doit.kotlinbasesture.R
 import com.doit.networklibrary.MultiStateObserver
+import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(){
 
     private val mLoginViewModel:LoginViewModel=LoginViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
+        onInitView()
+        doLogin.setOnClickListener { view ->
+            doLogin()
+        }
+
     }
 
-    fun OnInitView() {
+    fun onInitView() {
 
         mLoginViewModel.mLoginLiveData.observe(this, object:MultiStateObserver<UserInfoBean>(){
             /**
@@ -20,6 +29,12 @@ class LoginActivity : AppCompatActivity() {
              */
             override fun onDataChange(data: UserInfoBean?) {
                 super.onDataChange(data)
+                //
+                Log.d("kotlin","name="+ data!!.nickName)
+            }
+
+            override fun onFailed() {
+                super.onFailed()
             }
 
 

@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 android {
 
     defaultConfig {
-        applicationId "com.fuusy.jetpackkt"
+        applicationId "com.doit.kotlinbasesture"
     }
 
 }
