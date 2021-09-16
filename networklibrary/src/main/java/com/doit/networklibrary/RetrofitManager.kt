@@ -10,6 +10,11 @@ import java.util.concurrent.TimeUnit
 
 private const val TAG = "RetrofitManager"
 
+/**
+ * todo
+ *  1、统一的错误的封装
+ *  2、把Intercepter
+ */
 object RetrofitManager {
    private val  url:String="";//todo 加上自己的uri就可以了
 
