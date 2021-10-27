@@ -1,4 +1,4 @@
-package com.doit.base.base
+package com.doit.base.app
 
 import android.app.Activity
 import java.util.*

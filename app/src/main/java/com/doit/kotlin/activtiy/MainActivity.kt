@@ -20,6 +20,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int {
         return R.layout.activity_main;
     }
-
-
 }

@@ -15,8 +15,7 @@ import java.util.concurrent.TimeUnit
 abstract class BaseRetrofitClient {
 
     companion object CLIENT {
-        const val TAG = "RetrofitManager"
-        const val BASE_URL = "http://test-ns.htexam.com/"
+        private const val TAG = "BaseRetrofitClient"
         private const val TIME_OUT = 10
     }
 
