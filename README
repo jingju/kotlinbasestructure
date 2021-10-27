@@ -1,4 +1,4 @@
-封装过程中一些问题记录
+##封装过程中一些问题记录
 1、apply plugin: 'kotlin-android-extensions' ，kotlin-android-extensions插件的作用
 https://guolin.blog.csdn.net/article/details/113089706
 可以不用findviewbyid,和 bufferkniffe ,直接使用在xml中定义的插件
