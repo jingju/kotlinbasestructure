@@ -2,10 +2,10 @@
 buildscript {
      //todo  关注下这两个版本
     ext.kotlin_version = "1.3.72"
-    ext.koin_version = '2.2.0-rc-3'
+    ext.koin_version = '3.1.2'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
@@ -19,7 +19,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
