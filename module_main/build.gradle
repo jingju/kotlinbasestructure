@@ -1,0 +1,22 @@
+if (isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply from: '../module_build.gradle'
+
+android {
+    defaultConfig {
+        if (!isRelease) {
+            applicationId appID.main
+        }
+    }
+}
+
+dependencies {
+    //arouter
+    implementation dependenciesID["arouter-api"]
+    kapt dependenciesID["arouter-compiler-kapt"]
+
+    api project(path: ':library_base')
+}
