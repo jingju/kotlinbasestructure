@@ -11,7 +11,7 @@ import com.doit.baselibrary.R
 /**
  * @author chends create on 2021/10/27.
  */
-class BaseViewBindingFragment<VB : ViewBinding> : BaseFragment() {
+open class BaseViewBindingFragment<VB : ViewBinding> : BaseFragment() {
 
     private var _binding: VB? = null
     protected val binding get() = _binding!!

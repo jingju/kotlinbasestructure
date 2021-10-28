@@ -7,7 +7,7 @@ import com.doit.baselibrary.BaseActivity
 /**
  * @author chends create on 2021/10/27.
  */
-class BaseViewBindingActivity<VB : ViewBinding> : BaseActivity() {
+open class BaseViewBindingActivity<VB : ViewBinding> : BaseActivity() {
     protected lateinit var binding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
