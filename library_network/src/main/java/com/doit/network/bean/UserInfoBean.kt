@@ -9,6 +9,7 @@ data class UserInfoBean(
     val birthday: Long,
     val nickName: String,
     val sex: Int,
+    val age:Int
 ) : Parcelable {
 
 }

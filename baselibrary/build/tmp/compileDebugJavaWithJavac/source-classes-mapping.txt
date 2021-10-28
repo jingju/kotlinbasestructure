@@ -1,0 +1,14 @@
+com/doit/baselibrary/BuildConfig.java
+ com.doit.baselibrary.BuildConfig
+com/doit/baselibrary/BR.java
+ com.doit.baselibrary.BR
+com/doit/baselibrary/DataBindingTriggerClass.java
+ com.doit.baselibrary.DataBindingTriggerClass
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/doit/baselibrary/DataBinderMapperImpl.java
+ com.doit.baselibrary.DataBinderMapperImpl
+ com.doit.baselibrary.DataBinderMapperImpl$InnerBrLookup
+ com.doit.baselibrary.DataBinderMapperImpl$InnerLayoutIdLookup
