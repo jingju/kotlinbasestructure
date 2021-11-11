@@ -16,17 +16,9 @@ class LoginViewModel : BaseViewModel<ActivityLoginBinding>() {
 
     private val repository by lazy { LoginRepository() }
 
-    private var viewDataBinding: ActivityLoginBinding? = null
     val mUserLiveData = StateMutableLiveData<UserInfoBean>()
 
     suspend fun login(phoneNum: String, password: String) {
         mUserLiveData.value = repository.login(phoneNum, password)
-    }
-
-    override fun attachUi(viewDataBinding: ActivityLoginBinding) {
-        this.viewDataBinding = viewDataBinding;
-    }
-
-    override fun detachUi() {
     }
 }
