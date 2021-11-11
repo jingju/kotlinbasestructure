@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'//Parcelable序列化插件
 
 android {
     compileSdkVersion androidID.compileSdkVersion
@@ -12,6 +13,14 @@ android {
         versionName androidID.versionName
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
     }
 
     buildTypes {
@@ -47,6 +56,11 @@ dependencies {
 
     //koin-androidx-viewmodel
     api dependenciesID["koin-androidx-viewmodel"]
+
+    //room
+    implementation dependenciesID["room-runtime"]
+    kapt dependenciesID["room-compiler-kapt"]
+    implementation dependenciesID["room-ktx"]
 
     //project
     api project(path: ':library_network')

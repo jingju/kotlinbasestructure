@@ -16,8 +16,14 @@ import com.kingja.loadsir.core.LoadSir
  */
 abstract class BaseApplication : Application() {
 
+    companion object {
+        private lateinit var instance: Application
+        fun instance() = instance
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this
         init()
         setApplication(this)
     }
