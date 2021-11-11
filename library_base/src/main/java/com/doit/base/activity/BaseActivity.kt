@@ -66,7 +66,7 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), IBaseVie
         }
     }
 
-    fun dismissLoading() {
+    override fun dismissLoading() {
         showContent()
     }
 
@@ -85,11 +85,6 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), IBaseVie
             }
         }
     }
-
-    /**
-     * 失败重试,重新加载事件
-     */
-    protected abstract fun onRetryBtnClick()
 
     @LayoutRes
     protected abstract fun getLayoutId(): Int

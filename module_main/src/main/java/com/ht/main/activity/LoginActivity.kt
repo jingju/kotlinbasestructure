@@ -17,7 +17,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     private val mViewModel by viewModels<LoginViewModel>()
 
     override fun init() {
-        initData()
+        initView()
         initObserver()
     }
 
@@ -28,7 +28,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override fun onRetryBtnClick() {
     }
 
-    private fun initData() {
+    private fun initView() {
         setLoadSir(viewDataBinding!!.refreshLayout)
         viewDataBinding!!.btnDo.setOnClickListener {
             launchWithLoading<ActivityLoginBinding> {

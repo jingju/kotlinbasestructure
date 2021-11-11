@@ -19,6 +19,11 @@ interface IBaseView {
     fun showLoading()
 
     /**
+     * 关闭加载提示
+     */
+    fun dismissLoading()
+
+    /**
      * 显示空页面
      */
     fun showEmpty()
@@ -27,4 +32,9 @@ interface IBaseView {
      * 刷新失败
      */
     fun showFailure(message: String?)
+
+    /**
+     * 失败重试,重新加载事件
+     */
+    fun onRetryBtnClick()
 }

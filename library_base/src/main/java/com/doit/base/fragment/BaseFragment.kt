@@ -58,6 +58,10 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
         }
     }
 
+    override fun dismissLoading() {
+        showContent()
+    }
+
     override fun showEmpty() {
         if (null != mLoadService) {
             mLoadService!!.showCallback(EmptyCallback::class.java)
@@ -80,9 +84,4 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
                 view
             ) { v: View? -> onRetryBtnClick() }
     }
-
-    /**
-     * 失败重试,加载事件
-     */
-    protected abstract fun onRetryBtnClick()
 }
