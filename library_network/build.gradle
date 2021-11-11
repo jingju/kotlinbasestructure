@@ -44,14 +44,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     api "com.squareup.retrofit2:retrofit:2.9.0"
 
-    api dependenciesID["kotlin-stdlib"]
-    api dependenciesID["koin-core"]
-    api dependenciesID["koin-core-ext"]
-    api dependenciesID["koin-androidx-scope"]
-    api dependenciesID["koin-androidx-viewmodel"]
-    api dependenciesID["koin-androidx-fragment"]
-    api dependenciesID["koin-androidx-ext"]
-
-    //
+    //livedatabus
     implementation dependenciesID["livedatabus"]
 }

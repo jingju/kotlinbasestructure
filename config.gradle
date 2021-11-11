@@ -1,6 +1,6 @@
 ext {
     //控住组件是否独立运行开关
-    isRelease = true
+    isRelease = false
 
     koin_version = '2.2.0-rc-3'
     room_version = "2.3.0"

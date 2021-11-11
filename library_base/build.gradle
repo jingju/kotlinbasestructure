@@ -45,5 +45,9 @@ dependencies {
     //loadsir
     implementation dependenciesID["loadsir"]
 
+    //koin-androidx-viewmodel
+    api dependenciesID["koin-androidx-viewmodel"]
+
+    //project
     api project(path: ':library_network')
 }

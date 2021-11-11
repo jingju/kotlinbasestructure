@@ -35,7 +35,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
-         viewBinding = true
+        viewBinding = true
     }
 }
 
@@ -51,6 +51,5 @@ dependencies {
         implementation project(path: ':module_main')
     } else {
         implementation project(path: ':library_base')
-        implementation project(path: ':library_common')
     }
 }

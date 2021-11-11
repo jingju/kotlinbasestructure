@@ -1,7 +1,6 @@
 package com.doit.network.base
 
 import com.doit.network.BuildConfig
-import kotlinx.coroutines.delay
 
 /**
  * BaseRepository
