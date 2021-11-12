@@ -53,7 +53,7 @@ abstract class DBFactory : RoomDatabase() {
                     }
                 })
                 .fallbackToDestructiveMigration()//数据库升级异常之后的回滚
-                //.addMigrations(Migration1_2()) //数据库升级
+                //.addMigrations(Migration1_2()) //数据库升级 1、更新版本号 2、增加addMigrations迁移策略 3、Migration1_2实现迁移策略
                 .build()
         }
     }

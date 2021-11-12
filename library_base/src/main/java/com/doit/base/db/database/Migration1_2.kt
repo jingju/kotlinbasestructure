@@ -17,5 +17,6 @@ class Migration1_2 : Migration(1, 2) {
 
     override fun migrate(database: SupportSQLiteDatabase) {
         //todo 升级处理
+        database.execSQL("ALTER TABLE Person ADD COLUMN last_update INTEGER");
     }
 }
