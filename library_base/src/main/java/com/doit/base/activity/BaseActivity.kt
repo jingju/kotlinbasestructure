@@ -85,7 +85,4 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), IBaseVie
             }
         }
     }
-
-    @LayoutRes
-    protected abstract fun getLayoutId(): Int
 }

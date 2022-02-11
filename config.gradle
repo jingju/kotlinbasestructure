@@ -81,6 +81,9 @@ ext {
             "koin-androidx-ext"         : "org.koin:koin-androidx-ext:$koin_version",
 
             //livedatabus
-            "livedatabus"        : 'io.github.jeremyliao:live-event-bus-x:1.8.0',
+            "livedatabus"               : 'io.github.jeremyliao:live-event-bus-x:1.8.0',
+
+            //log
+            "logger"                    : 'com.orhanobut:logger:2.2.0',
     ]
 }

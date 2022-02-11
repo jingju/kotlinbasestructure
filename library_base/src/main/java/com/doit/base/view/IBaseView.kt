@@ -1,5 +1,7 @@
 package com.doit.base.view
 
+import androidx.annotation.LayoutRes
+
 /**
  *
  * 应用模块: activity
@@ -7,6 +9,12 @@ package com.doit.base.view
  * 类描述: 界面UI显示切换
  */
 interface IBaseView {
+
+    /**
+     * 布局
+     */
+    @LayoutRes
+    fun getLayoutId(): Int
 
     /**
      * 显示内容

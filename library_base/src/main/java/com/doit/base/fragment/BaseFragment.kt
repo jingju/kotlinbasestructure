@@ -42,9 +42,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
         return viewDataBinding!!.root
     }
 
-    @LayoutRes
-    abstract fun getLayoutId(): Int
-
     override fun showContent() {
         if (null != mLoadService) {
             isShowedContent = true

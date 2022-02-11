@@ -1,5 +1,6 @@
 package com.ht.main.activity
 
+import android.content.Intent
 import androidx.activity.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.doit.base.activity.BaseActivity
@@ -34,6 +35,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             launchWithLoading<ActivityLoginBinding> {
                 mViewModel.login("1234567890123", "12345678")
             }
+        }
+        viewDataBinding!!.btnNext.setOnClickListener {
+
         }
     }
 
