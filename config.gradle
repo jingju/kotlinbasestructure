@@ -85,5 +85,8 @@ ext {
 
             //log
             "logger"                    : 'com.orhanobut:logger:2.2.0',
+
+            //json动画
+            "lottie"                    : 'com.airbnb.android:lottie:2.7.0',
     ]
 }

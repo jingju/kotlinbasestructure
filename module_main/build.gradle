@@ -16,6 +16,8 @@ android {
 dependencies {
     //arouter
     implementation dependenciesID["arouter-api"]
+    implementation dependenciesID["navigation-fragment-ktx"]
+    implementation dependenciesID["navigation-ui-ktx"]
     kapt dependenciesID["arouter-compiler-kapt"]
 
     api project(path: ':library_base')

@@ -2,12 +2,14 @@
 
 ## 架构与相关技术
 
-    kotlin
-    Arouter路由实现组件化
-    MVVM+JetPack
-    MVVM：View  Mode  ViewMode  Repository
-    Jetpack：ViewBinding  DataBinding  LiveData  ViewMode  LifeCycle
-    HTTP封装：Flow  协程  Retrofit
+    1、开发语言 kotlin
+    2、组件框架：Arouter
+    3、架构：MVVM + JetPack
+            MVVM：View  Mode  ViewMode  Repository
+            JetPack: ViewBinding  DataBinding  LiveData  ViewMode  LifeCycle  navigation
+    4、HTTP封装：Flow  协程  Retrofit
+    5、底部导航：BottomNavigationView
+    6、
 
 ## 技术对比
 

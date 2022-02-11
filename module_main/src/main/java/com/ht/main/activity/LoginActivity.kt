@@ -37,7 +37,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             }
         }
         viewDataBinding!!.btnNext.setOnClickListener {
-
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
     }
 

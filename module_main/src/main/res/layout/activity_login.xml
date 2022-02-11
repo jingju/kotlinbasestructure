@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="user"
             type="com.doit.network.bean.UserInfoBean" />
@@ -73,31 +72,30 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_do"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="320dp"
             android:background="@color/purple_200"
             android:gravity="center"
             android:text="登录"
             android:textColor="@color/white"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_next"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="150dp"
             android:background="@color/purple_200"
             android:gravity="center"
-            android:text="跳转"
+            android:text="主页"
             android:textColor="@color/white"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

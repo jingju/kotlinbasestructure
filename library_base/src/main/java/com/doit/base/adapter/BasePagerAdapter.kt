@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class BasePagerAdapter : FragmentPagerAdapter {
+open class BasePagerAdapter : FragmentPagerAdapter {
 
     private var mFragments = mutableListOf<Fragment>()
     private var fm: FragmentManager? = null

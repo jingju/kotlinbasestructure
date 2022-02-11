@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/questionFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.ht.main.fragment.QuestionFragment" />
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.ht.main.fragment.VideoFragment" />
+
+    <fragment
+        android:id="@+id/lookFragment"
+        android:name="com.ht.main.fragment.CourseFragment" />
+
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.ht.main.fragment.MineFragment" />
+
+</navigation>
