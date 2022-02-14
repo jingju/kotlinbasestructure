@@ -4,7 +4,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.widget.Toast
 
-object ToastUtil {
+object ToastUtils {
     var mToast: Toast? = null
 
     fun show(context: Context, msg: String?) {

@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.viewpager.widget.ViewPager
 
-class MyViewPager : ViewPager {
+class CustomViewPager : ViewPager {
 
     constructor(context: Context) : super(context)
 

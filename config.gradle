@@ -83,6 +83,11 @@ ext {
             //livedatabus
             "livedatabus"               : 'io.github.jeremyliao:live-event-bus-x:1.8.0',
 
+            "okhttp"                    : 'com.squareup.okhttp3:okhttp:4.9.0',
+            "logging_interceptor"       : 'com.squareup.okhttp3:logging-interceptor:4.9.0',
+            "converter_gson"            : 'com.squareup.retrofit2:converter-gson:2.9.0',
+            "retrofit"                  : 'com.squareup.retrofit2:retrofit:2.9.0',
+
             //log
             "logger"                    : 'com.orhanobut:logger:2.2.0',
 

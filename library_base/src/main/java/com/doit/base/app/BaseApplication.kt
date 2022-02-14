@@ -39,7 +39,7 @@ abstract class BaseApplication : Application() {
     private fun setApplication(application: BaseApplication) {
         application.registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-                AppManager.addActivity(activity)
+                ActivityHelper.instance.addActivity(activity)
             }
 
             override fun onActivityStarted(activity: Activity) {
@@ -58,7 +58,7 @@ abstract class BaseApplication : Application() {
             }
 
             override fun onActivityDestroyed(activity: Activity) {
-                AppManager.removeActivity(activity)
+                ActivityHelper.instance.removeActivity(activity)
             }
         })
     }

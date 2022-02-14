@@ -4,8 +4,9 @@ import android.content.Intent
 import androidx.activity.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.doit.base.activity.BaseActivity
-import com.doit.base.utils.ToastUtil
+import com.doit.base.utils.ToastUtils
 import com.doit.base.utils.launchWithLoading
+import com.doit.base.view.dialog.CustomDialog
 import com.doit.network.bean.UserInfoBean
 import com.doit.network.observer.observeState
 import com.ht.main.R
@@ -44,21 +45,21 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     private fun initObserver() {
         mViewModel.mUserLiveData.observeState(this) {
             onSuccess = { data: UserInfoBean? ->
-                ToastUtil.show(this@LoginActivity, "onSuccess")
+                ToastUtils.show(this@LoginActivity, "onSuccess")
             }
 
             onDataEmpty = {
-                ToastUtil.show(this@LoginActivity, "onDataEmpty")
+                ToastUtils.show(this@LoginActivity, "onDataEmpty")
             }
 
             onComplete = this@LoginActivity::dismissLoading
 
             onFailed = { code, msg ->
-                ToastUtil.show(this@LoginActivity, "errorCode: $code   errorMsg: $msg")
+                ToastUtils.show(this@LoginActivity, "errorCode: $code   errorMsg: $msg")
             }
 
             onError = {
-                ToastUtil.show(this@LoginActivity, it.message)
+                ToastUtils.show(this@LoginActivity, it.message)
             }
         }
     }

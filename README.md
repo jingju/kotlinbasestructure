@@ -2,14 +2,29 @@
 
 ## 架构与相关技术
 
+    架构
     1、开发语言 kotlin
     2、组件框架：Arouter
     3、架构：MVVM + JetPack
             MVVM：View  Mode  ViewMode  Repository
             JetPack: ViewBinding  DataBinding  LiveData  ViewMode  LifeCycle  navigation
     4、HTTP封装：Flow  协程  Retrofit
-    5、底部导航：BottomNavigationView
-    6、
+
+    相关技术
+    1、底部导航：BottomNavigationView
+    2、BaseAdapter、BasePagerAdapter封装
+    3、状态栏适配 ----  ImmersionBar
+    4、轮播图  ----  XBanner 
+    5、自定义控件：
+        CustomDialog、CustomPopupWindow、CustomViewPager（是否支持滑动）
+    6、工具类
+        ActivityHelper、DensityUtils、DateUtils、NetWorkUtils、ToastUtils
+    7、文件下载封装
+    8、6.0适配
+
+    三方框架（1、选择业界著名框架  2、能自己封装就自己封装减小无用代码体积  3、知其框架原理合理选择）
+    1、
+    2、
 
 ## 技术对比
 

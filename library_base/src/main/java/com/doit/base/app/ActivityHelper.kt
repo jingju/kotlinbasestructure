@@ -3,26 +3,28 @@ package com.doit.base.app
 import android.app.Activity
 import java.util.*
 
-object AppManager {
+class ActivityHelper private constructor() {
 
-    var activityStack: Stack<Activity>? = null
+    private var activityStack: Stack<Activity> = Stack()
+
+    companion object {
+        val instance: ActivityHelper by lazy { ActivityHelper() }
+    }
 
     /**
      * 添加Activity到堆栈
      */
     fun addActivity(activity: Activity?) {
-        if (activityStack == null) {
-            activityStack = Stack<Activity>()
-        }
-        activityStack!!.add(activity)
+        activityStack.add(activity)
     }
 
     /**
      * 移除指定的Activity
      */
-    fun removeActivity(activity: Activity?) {
-        if (activity != null) {
-            activityStack!!.remove(activity)
+    fun removeActivity(activity: Activity) {
+        if (activityStack.contains(activity)) {
+            activity.finish()
+            activityStack.remove(activity)
         }
     }
 
@@ -31,22 +33,22 @@ object AppManager {
      */
     fun isActivity(): Boolean {
         return if (activityStack != null) {
-            activityStack!!.isEmpty()
+            activityStack.isEmpty()
         } else false
     }
 
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
      */
-    fun currentActivity(): Activity? {
-        return activityStack!!.lastElement()
+    fun currentActivity(): Activity {
+        return activityStack.lastElement()
     }
 
     /**
      * 结束当前Activity（堆栈中最后一个压入的）
      */
     fun finishActivity() {
-        val activity: Activity = activityStack!!.lastElement()
+        val activity: Activity = activityStack.lastElement()
         finishActivity(activity)
     }
 
@@ -65,7 +67,7 @@ object AppManager {
      * 结束指定类名的Activity
      */
     fun finishActivity(cls: Class<*>) {
-        for (activity in activityStack!!) {
+        for (activity in activityStack) {
             if (activity.javaClass == cls) {
                 finishActivity(activity)
                 break
@@ -78,14 +80,14 @@ object AppManager {
      */
     private fun finishAllActivity() {
         var i = 0
-        val size: Int = activityStack!!.size
+        val size: Int = activityStack.size
         while (i < size) {
-            if (null != activityStack!![i]) {
-                finishActivity(activityStack!![i])
+            if (null != activityStack[i]) {
+                finishActivity(activityStack[i])
             }
             i++
         }
-        activityStack!!.clear()
+        activityStack.clear()
     }
 
     /**
@@ -95,7 +97,7 @@ object AppManager {
      */
     fun getActivity(cls: Class<*>): Activity? {
         if (activityStack != null) {
-            for (activity in activityStack!!) {
+            for (activity in activityStack) {
                 if (activity.javaClass == cls) {
                     return activity
                 }
@@ -107,11 +109,11 @@ object AppManager {
     /**
      * 退出应用程序
      */
-    fun AppExit() {
+    fun exitApp() {
         try {
             finishAllActivity()
         } catch (e: Exception) {
-            activityStack!!.clear()
+            activityStack.clear()
             e.printStackTrace()
         }
     }

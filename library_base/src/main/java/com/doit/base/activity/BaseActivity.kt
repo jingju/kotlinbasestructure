@@ -2,14 +2,13 @@ package com.doit.base.activity
 
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.doit.base.loadsir.EmptyCallback
 import com.doit.base.loadsir.ErrorCallback
 import com.doit.base.loadsir.LoadingCallback
-import com.doit.base.utils.ToastUtil
+import com.doit.base.utils.ToastUtils
 import com.doit.base.view.IBaseView
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
@@ -81,7 +80,7 @@ abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), IBaseVie
             if (!isShowedContent) {
                 mLoadService!!.showCallback(ErrorCallback::class.java)
             } else {
-                ToastUtil.show(this, message)
+                ToastUtils.show(this, message)
             }
         }
     }

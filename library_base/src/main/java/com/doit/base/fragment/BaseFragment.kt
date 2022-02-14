@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -12,8 +11,7 @@ import com.doit.base.view.IBaseView
 import com.doit.base.loadsir.EmptyCallback
 import com.doit.base.loadsir.ErrorCallback
 import com.doit.base.loadsir.LoadingCallback
-import com.doit.base.utils.ToastUtil
-import com.kingja.loadsir.callback.Callback.OnReloadListener
+import com.doit.base.utils.ToastUtils
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
 
@@ -70,7 +68,7 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
             if (!isShowedContent) {
                 mLoadService!!.showCallback(ErrorCallback::class.java)
             } else {
-                context?.let { ToastUtil.show(it, message) }
+                context?.let { ToastUtils.show(it, message) }
             }
         }
     }

@@ -6,7 +6,7 @@ import android.net.NetworkInfo
 import android.net.wifi.WifiManager
 import android.telephony.TelephonyManager
 
-class NetworkUtil private constructor() {
+class NetWorkUtils private constructor() {
     init {
         throw UnsupportedOperationException("NetworkUtils constructor not allowed to be created")
     }
