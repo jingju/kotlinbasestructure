@@ -17,7 +17,7 @@ import com.kingja.loadsir.core.LoadSir
 
 abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
 
-    var viewDataBinding: V? = null
+    lateinit var viewDataBinding: V
     private var mLoadService: LoadService<*>? = null
     private var isShowedContent = false
 

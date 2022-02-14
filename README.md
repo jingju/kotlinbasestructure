@@ -20,11 +20,14 @@
     6、工具类
         ActivityHelper、DensityUtils、DateUtils、NetWorkUtils、ToastUtils
     7、文件下载封装
-    8、6.0适配
+    8、6.0以上适配
+    9、屏幕适配方案 ---- smallestWidth适配
+    10、
 
     三方框架（1、选择业界著名框架  2、能自己封装就自己封装减小无用代码体积  3、知其框架原理合理选择）
-    1、
-    2、
+    1、Logger
+    2、lottie
+    3、
 
 ## 技术对比
 

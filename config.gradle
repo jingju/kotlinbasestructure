@@ -41,15 +41,6 @@ ext {
             "constraintlayout"          : "androidx.constraintlayout:constraintlayout:2.0.4",
             //vectorDrawable---
             "vectordrawable"            : "androidx.vectordrawable:vectordrawable:1.1.0",
-            //refresh-layout
-            "refresh-layout"            : "com.scwang.smart:refresh-layout-kernel:2.0.3",
-
-            //loadsir
-            "loadsir"                   : "com.kingja.loadsir:loadsir:1.3.8",
-
-            //Arouter---阿里路由
-            "arouter-api"               : "com.alibaba:arouter-api:1.5.0",
-            "arouter-compiler-kapt"     : "com.alibaba:arouter-compiler:1.2.2",
 
             //paging3
             "paging-runtime"            : "androidx.paging:paging-runtime:3.0.0-beta01",
@@ -93,5 +84,15 @@ ext {
 
             //json动画
             "lottie"                    : 'com.airbnb.android:lottie:2.7.0',
+
+            //loadsir
+            "loadsir"                   : "com.kingja.loadsir:loadsir:1.3.8",
+
+            //Arouter---阿里路由
+            "arouter-api"               : "com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler-kapt"     : "com.alibaba:arouter-compiler:1.2.2",
+
+            //refresh-layout
+            "refresh-layout"            : "com.scwang.smart:refresh-layout-kernel:2.0.3",
     ]
 }

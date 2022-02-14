@@ -31,20 +31,20 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun initView() {
-        setLoadSir(viewDataBinding!!.refreshLayout)
-        viewDataBinding!!.btnDo.setOnClickListener {
+        setLoadSir(viewDataBinding.refreshLayout)
+        viewDataBinding.btnDo.setOnClickListener {
             launchWithLoading<ActivityLoginBinding> {
                 mViewModel.login("1234567890123", "12345678")
             }
         }
-        viewDataBinding!!.btnNext.setOnClickListener {
+        viewDataBinding.btnNext.setOnClickListener {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
     }
 
     private fun initObserver() {
         mViewModel.mUserLiveData.observeState(this) {
-            onSuccess = { data: UserInfoBean? ->
+            onSuccess = {
                 ToastUtils.show(this@LoginActivity, "onSuccess")
             }
 

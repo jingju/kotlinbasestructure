@@ -21,7 +21,7 @@ import com.kingja.loadsir.core.LoadSir
  */
 abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity(), IBaseView {
 
-    var viewDataBinding: V? = null
+    lateinit var viewDataBinding: V
     private var mLoadService: LoadService<*>? = null
     private var isShowedContent = false
 

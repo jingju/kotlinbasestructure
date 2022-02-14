@@ -18,7 +18,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun init() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        viewDataBinding!!.bnvMenu.setupWithNavController(navController)
+        viewDataBinding.bnvMenu.setupWithNavController(navController)
     }
 
     override fun getLayoutId(): Int {
