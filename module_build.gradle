@@ -1,5 +1,10 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+if (isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
 
 android {
     compileSdkVersion androidID.compileSdkVersion

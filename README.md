@@ -25,9 +25,18 @@
     10、
 
     三方框架（1、选择业界著名框架  2、能自己封装就自己封装减小无用代码体积  3、知其框架原理合理选择）
-    1、Logger
-    2、lottie
+    1、Logger                --- log日志
+    2、lottie                --- JSON 动画
+    3、mmkv                  --- 腾讯key-value组件，替代SharedPreferences
+    4、LeakCanary            --- 内存泄漏监控
+    5、tbssdk                --- 腾讯 x5 内核浏览器
+    6、EventBus              --- 事件总线
+    
+    待考察
+    1、BaseRecyclerViewAdapterHelper --- Adapter封装未使用
+    2、permissionx           --- 权限管理未使用
     3、
+    
 
 ## 技术对比
 
