@@ -59,6 +59,23 @@
                 SQLite	    GreenDao	    Room
         插入数据	5653	    2771	        1441
         查询全部	611	        750	            411
+    3、依赖管理3种方式对比
+        Gradle脚本 VS buildSrc VS Composing builds
+        1）Gradle脚本插件
+            不支持 AndroidStudio 自动补全
+            不支持 AndroidStudio 单击跳转
+            不利于维护
+            依赖版本更新将重新构建整个项目
+        2）buildSrc
+            支持 AndroidStudio 自动补全
+            支持 AndroidStudio 单击跳转
+            共享 buildSrc 库工件的引用，全局只有一个地方可以修改它，利于维护
+            依赖版本更新将重新构建整个项目
+        3）Composing builds
+            支持 AndroidStudio 自动补全
+            支持 AndroidStudio 单击跳转
+            全局只有一个地方可以修改它，利于维护
+            依赖版本更新不会重新构建整个项目
 
 ## 问题总结
 
