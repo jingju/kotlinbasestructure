@@ -2,6 +2,7 @@ import com.ht.build.*
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+
 if (ProjectBuildConfig.isRelease) {
     apply plugin: 'com.android.library'
 } else {

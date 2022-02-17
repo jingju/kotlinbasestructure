@@ -87,7 +87,7 @@
             支持 AndroidStudio 单击跳转
             共享 buildSrc 库工件的引用，全局只有一个地方可以修改它，利于维护
             依赖版本更新将重新构建整个项目
-        3）Composing builds（各种兼容问题，暂放弃）
+        3）Composing builds（各种兼容问题，有空研究下；buildSrc升级到Composing builds很简单）
             支持 AndroidStudio 自动补全
             支持 AndroidStudio 单击跳转
             全局只有一个地方可以修改它，利于维护
