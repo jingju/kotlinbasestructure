@@ -6,13 +6,13 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.doit.base.activity.BaseActivity
 import com.ht.main.R
-import com.ht.main.databinding.ActivityMainBinding
+import com.ht.main.databinding.MainActivityMainBinding
 
 /**
  * Jetpack Navigation
  * BottomNavigationView 底部导航
  */
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainActivityMainBinding>() {
 
     private lateinit var navController: NavController
 
@@ -22,7 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_main
+        return R.layout.main_activity_main
     }
 
     override fun onRetryBtnClick() {

@@ -3,7 +3,7 @@ package com.ht.main.viewModel
 import com.doit.base.viewmodel.BaseViewModel
 import com.doit.network.bean.UserInfoBean
 import com.doit.network.observer.StateMutableLiveData
-import com.ht.main.databinding.ActivityLoginBinding
+import com.ht.main.databinding.MainActivityLoginBinding
 import com.ht.main.repository.LoginRepository
 
 /**
@@ -12,7 +12,7 @@ import com.ht.main.repository.LoginRepository
  * 2、可以在viewModel里面创建多个repository
  * 3、在repository调用的时候将livedata传递过去
  */
-class LoginViewModel : BaseViewModel<ActivityLoginBinding>() {
+class LoginViewModel : BaseViewModel<MainActivityLoginBinding>() {
 
     private val repository by lazy { LoginRepository() }
 

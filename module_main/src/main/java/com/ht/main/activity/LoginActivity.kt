@@ -6,15 +6,13 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.doit.base.activity.BaseActivity
 import com.doit.base.utils.ToastUtils
 import com.doit.base.utils.launchWithLoading
-import com.doit.base.view.dialog.CustomDialog
-import com.doit.network.bean.UserInfoBean
 import com.doit.network.observer.observeState
 import com.ht.main.R
-import com.ht.main.databinding.ActivityLoginBinding
+import com.ht.main.databinding.MainActivityLoginBinding
 import com.ht.main.viewModel.LoginViewModel
 
 @Route(path = "/main/LoginActivity")
-class LoginActivity : BaseActivity<ActivityLoginBinding>() {
+class LoginActivity : BaseActivity<MainActivityLoginBinding>() {
 
     private val mViewModel by viewModels<LoginViewModel>()
 
@@ -24,7 +22,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_login;
+        return R.layout.main_activity_login;
     }
 
     override fun onRetryBtnClick() {
@@ -33,7 +31,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     private fun initView() {
         setLoadSir(viewDataBinding.refreshLayout)
         viewDataBinding.btnDo.setOnClickListener {
-            launchWithLoading<ActivityLoginBinding> {
+            launchWithLoading<MainActivityLoginBinding> {
                 mViewModel.login("1234567890123", "12345678")
             }
         }

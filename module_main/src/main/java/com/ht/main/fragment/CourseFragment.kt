@@ -2,11 +2,9 @@ package com.ht.main.fragment
 
 import com.doit.base.fragment.BaseLazyFragment
 import com.ht.main.R
-import com.ht.main.databinding.FragmentCourseBinding
-import com.ht.main.databinding.FragmentQuestionBinding
-import com.ht.main.databinding.FragmentVideoBinding
+import com.ht.main.databinding.MainFragmentCourseBinding
 
-class CourseFragment : BaseLazyFragment<FragmentCourseBinding>() {
+class CourseFragment : BaseLazyFragment<MainFragmentCourseBinding>() {
 
     override fun onFirstVisibleToUser() {
     }
@@ -18,7 +16,7 @@ class CourseFragment : BaseLazyFragment<FragmentCourseBinding>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_course
+        return R.layout.main_fragment_course
     }
 
     override fun onRetryBtnClick() {

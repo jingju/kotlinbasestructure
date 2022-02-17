@@ -1,8 +1,10 @@
+# <p align="center"> AndroidBaseFrame</p>
+
 # 基础框架搭建
 
 ## 架构与相关技术
 
-    架构说明
+    模块说明
     app
         app壳 工程，是依赖所有组件的壳
     buildSrc

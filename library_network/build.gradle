@@ -1,8 +1,8 @@
+import com.ht.build.*
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'//Parcelable序列化插件
-
-import com.ht.build.*
 
 android {
     compileSdkVersion ProjectBuildConfig.compileSdkVersion

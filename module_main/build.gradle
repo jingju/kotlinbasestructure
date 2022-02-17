@@ -1,3 +1,5 @@
+import com.ht.build.*
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 if (ProjectBuildConfig.isRelease) {
@@ -5,8 +7,6 @@ if (ProjectBuildConfig.isRelease) {
 } else {
     apply plugin: 'com.android.application'
 }
-
-import com.ht.build.*
 
 android {
     compileSdkVersion ProjectBuildConfig.compileSdkVersion
@@ -54,6 +54,8 @@ android {
             }
         }
     }
+    //组件开发资源命名冲突，如果不按该前缀进行命名，AS 就会进行警告提示
+    resourcePrefix "main_"
 }
 
 dependencies {

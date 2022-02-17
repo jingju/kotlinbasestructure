@@ -5,9 +5,9 @@ import androidx.fragment.app.FragmentManager
 import com.doit.base.adapter.BasePagerAdapter
 import com.doit.base.fragment.BaseLazyFragment
 import com.ht.main.R
-import com.ht.main.databinding.FragmentQuestionBinding
+import com.ht.main.databinding.MainFragmentQuestionBinding
 
-class QuestionFragment : BaseLazyFragment<FragmentQuestionBinding>() {
+class QuestionFragment : BaseLazyFragment<MainFragmentQuestionBinding>() {
 
     private val titles = ArrayList<String>(3)
     private val fragments = ArrayList<Fragment>(3)
@@ -23,7 +23,7 @@ class QuestionFragment : BaseLazyFragment<FragmentQuestionBinding>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_question
+        return R.layout.main_fragment_question
     }
 
     override fun onRetryBtnClick() {

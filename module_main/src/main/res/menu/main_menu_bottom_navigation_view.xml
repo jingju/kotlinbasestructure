@@ -4,26 +4,26 @@
     <item
         android:id="@+id/questionFragment"
         android:enabled="true"
-        android:icon="@drawable/selector_main_tab_question_bank"
+        android:icon="@drawable/main_selector_tab_question_bank"
         android:title="题库"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/learnFragment"
         android:enabled="true"
-        android:icon="@drawable/selector_main_tab_video"
+        android:icon="@drawable/main_selector_tab_video"
         android:title="看看"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/lookFragment"
         android:enabled="true"
-        android:icon="@drawable/selector_main_tab_course"
+        android:icon="@drawable/main_selector_tab_course"
         android:title="课程"
         android:tooltipText="14sp"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/mineFragment"
         android:enabled="true"
-        android:icon="@drawable/selector_main_tab_my"
+        android:icon="@drawable/main_selector_tab_my"
         android:title="我的"
         app:showAsAction="ifRoom" />
 </menu>
