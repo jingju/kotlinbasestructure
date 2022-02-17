@@ -1,8 +1,6 @@
 package com.doit.base.app
 
-import android.app.Activity
 import android.app.Application
-import android.os.Bundle
 import com.doit.base.loadsir.EmptyCallback
 import com.doit.base.loadsir.ErrorCallback
 import com.doit.base.loadsir.LoadingCallback

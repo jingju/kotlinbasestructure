@@ -3,13 +3,10 @@ package com.doit.base.app
 import android.app.Activity
 import java.util.*
 
-class ActivityHelper private constructor() {
+object ActivityHelper {
 
-    private var activityStack: Stack<Activity> = Stack()
-
-    companion object {
-        val instance: ActivityHelper by lazy { ActivityHelper() }
-    }
+    // 管理栈
+    private val activityStack by lazy { Stack<Activity>() }
 
     /**
      * 添加Activity到堆栈

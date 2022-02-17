@@ -7,7 +7,7 @@ import android.os.Bundle
 class ActivityLifecycleCallbacksImpl : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-        ActivityHelper.instance.addActivity(activity)
+        ActivityHelper.addActivity(activity)
     }
 
     override fun onActivityStarted(activity: Activity) {
@@ -26,6 +26,6 @@ class ActivityLifecycleCallbacksImpl : Application.ActivityLifecycleCallbacks {
     }
 
     override fun onActivityDestroyed(activity: Activity) {
-        ActivityHelper.instance.removeActivity(activity)
+        ActivityHelper.removeActivity(activity)
     }
 }
