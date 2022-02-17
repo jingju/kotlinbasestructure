@@ -3,14 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'//Parcelable序列化插件
 
+import com.ht.build.*
+
 android {
-    compileSdkVersion androidID.compileSdkVersion
-    buildToolsVersion androidID.buildToolsVersion
+    compileSdkVersion ProjectBuildConfig.compileSdkVersion
+    buildToolsVersion ProjectBuildConfig.buildToolsVersion
     defaultConfig {
-        minSdkVersion androidID.minSdkVersion
-        targetSdkVersion androidID.targetSdkVersion
-        versionCode androidID.versionCode
-        versionName androidID.versionName
+        minSdkVersion ProjectBuildConfig.minSdkVersion
+        targetSdkVersion ProjectBuildConfig.targetSdkVersion
+        versionCode ProjectBuildConfig.versionCode
+        versionName ProjectBuildConfig.versionName
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
@@ -44,23 +46,23 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation DependencyConfig.AndroidX.CoreKtx
+    implementation DependencyConfig.AndroidX.Appcompat
+    implementation DependencyConfig.AndroidX.Material
+    testImplementation DependencyConfig.AndroidX.Junit
+    androidTestImplementation DependencyConfig.AndroidX.ExtJunit
+    androidTestImplementation DependencyConfig.AndroidX.EspressoCore
 
     //loadsir
-    implementation dependenciesID["loadsir"]
+    implementation DependencyConfig.GitHub.LoadSir
 
     //koin-androidx-viewmodel
-    api dependenciesID["koin-androidx-viewmodel"]
+    api DependencyConfig.Kotlin.KoinAndroidxViewModel
 
     //room
-    implementation dependenciesID["room-runtime"]
-    kapt dependenciesID["room-compiler-kapt"]
-    implementation dependenciesID["room-ktx"]
+    implementation DependencyConfig.JetPack.RoomRuntime
+    kapt DependencyConfig.JetPack.RoomCompilerKapt
+    implementation DependencyConfig.JetPack.RoomKtx
 
     //project
     api project(path: ':library_network')

@@ -2,15 +2,17 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+import com.ht.build.*
+
 android {
-    compileSdkVersion androidID.compileSdkVersion
-    buildToolsVersion androidID.buildToolsVersion
+    compileSdkVersion ProjectBuildConfig.compileSdkVersion
+    buildToolsVersion ProjectBuildConfig.buildToolsVersion
     defaultConfig {
-        applicationId appID.app
-        minSdkVersion androidID.minSdkVersion
-        targetSdkVersion androidID.targetSdkVersion
-        versionCode androidID.versionCode
-        versionName androidID.versionName
+        applicationId ProjectBuildConfig.app_id
+        minSdkVersion ProjectBuildConfig.minSdkVersion
+        targetSdkVersion ProjectBuildConfig.targetSdkVersion
+        versionCode ProjectBuildConfig.versionCode
+        versionName ProjectBuildConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -40,14 +42,14 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation DependencyConfig.AndroidX.CoreKtx
+    implementation DependencyConfig.AndroidX.Appcompat
+    implementation DependencyConfig.AndroidX.Material
+    testImplementation DependencyConfig.AndroidX.Junit
+    androidTestImplementation DependencyConfig.AndroidX.ExtJunit
+    androidTestImplementation DependencyConfig.AndroidX.EspressoCore
 
-    if (isRelease) {
+    if (ProjectBuildConfig.isRelease) {
         implementation project(path: ':module_main')
     } else {
         implementation project(path: ':library_base')

@@ -2,14 +2,16 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'//Parcelable序列化插件
 
+import com.ht.build.*
+
 android {
-    compileSdkVersion androidID.compileSdkVersion
-    buildToolsVersion androidID.buildToolsVersion
+    compileSdkVersion ProjectBuildConfig.compileSdkVersion
+    buildToolsVersion ProjectBuildConfig.buildToolsVersion
     defaultConfig {
-        minSdkVersion androidID.minSdkVersion
-        targetSdkVersion androidID.targetSdkVersion
-        versionCode androidID.versionCode
-        versionName androidID.versionName
+        minSdkVersion ProjectBuildConfig.minSdkVersion
+        targetSdkVersion ProjectBuildConfig.targetSdkVersion
+        versionCode ProjectBuildConfig.versionCode
+        versionName ProjectBuildConfig.versionName
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,20 +32,19 @@ android {
     }
 }
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation DependencyConfig.AndroidX.CoreKtx
+    implementation DependencyConfig.AndroidX.Appcompat
+    implementation DependencyConfig.AndroidX.Material
+    testImplementation DependencyConfig.AndroidX.Junit
+    androidTestImplementation DependencyConfig.AndroidX.ExtJunit
+    androidTestImplementation DependencyConfig.AndroidX.EspressoCore
 
     //http
-    implementation dependenciesID["okhttp"]
-    implementation dependenciesID["logging_interceptor"]
-    implementation dependenciesID["converter_gson"]
-    api dependenciesID["retrofit"]
+    implementation DependencyConfig.GitHub.Okhttp
+    implementation DependencyConfig.GitHub.LoggingInterceptor
+    implementation DependencyConfig.GitHub.ConverterGson
+    api DependencyConfig.GitHub.Retrofit
 
     //livedatabus
-    implementation dependenciesID["livedatabus"]
+    implementation DependencyConfig.GitHub.LiveDataBus
 }

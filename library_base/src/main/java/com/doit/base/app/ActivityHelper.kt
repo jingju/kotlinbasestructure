@@ -32,9 +32,7 @@ class ActivityHelper private constructor() {
      * 是否有activity
      */
     fun isActivity(): Boolean {
-        return if (activityStack != null) {
-            activityStack.isEmpty()
-        } else false
+        return activityStack.isEmpty()
     }
 
     /**
@@ -96,11 +94,9 @@ class ActivityHelper private constructor() {
      * @author kymjs
      */
     fun getActivity(cls: Class<*>): Activity? {
-        if (activityStack != null) {
-            for (activity in activityStack) {
-                if (activity.javaClass == cls) {
-                    return activity
-                }
+        for (activity in activityStack) {
+            if (activity.javaClass == cls) {
+                return activity
             }
         }
         return null

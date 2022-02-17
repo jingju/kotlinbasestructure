@@ -1,17 +1,17 @@
-apply from: 'config.gradle'
+import com.ht.build.*
+
 apply plugin: 'com.alibaba.arouter'
 
 buildscript {
-    ext.kotlin_version = "1.3.72"
     repositories {
         google()
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
-        classpath "com.alibaba:arouter-register:1.0.2"
+        classpath ProjectPluginManager.AndroidToolsPlugin
+        classpath ProjectPluginManager.KotlinPlugin
+        classpath ProjectPluginManager.ARouterRegister
     }
 }
 
@@ -19,6 +19,12 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+}
+
+subprojects { subproject ->
+    // 如果想应用到某个子项目中，可以通过 subproject.name 来判断应用在哪个子项目中
+    if (subproject.name == "app") {
     }
 }
 

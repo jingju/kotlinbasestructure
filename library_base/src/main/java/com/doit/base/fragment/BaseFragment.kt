@@ -37,7 +37,7 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
         savedInstanceState: Bundle?
     ): View? {
         viewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
-        return viewDataBinding!!.root
+        return viewDataBinding.root
     }
 
     override fun showContent() {
@@ -77,6 +77,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment(), IBaseView {
         mLoadService = LoadSir.getDefault()
             .register(
                 view
-            ) { v: View? -> onRetryBtnClick() }
+            ) { onRetryBtnClick() }
     }
 }

@@ -2,6 +2,21 @@
 
 ## 架构与相关技术
 
+    架构说明
+    app
+        app壳 工程，是依赖所有组件的壳
+    buildSrc
+        负责项目的构建，里面存放着一些项目构建时用到的东西，比如项目配置，依赖。
+    library_base
+        项目的基础公共模块，存放着各种基类封装、对远程库的依赖、以及工具类、三方库封装，该组件是和项目业务无关的，
+        和项目业务相关的公共部分需要放在 lib_common 中
+    library_common --- (暂未集成)
+        项目的业务公共模块，这里面存放着项目里各个业务组件的公共部分，还有一些项目特定需要的一些文件等，该组件是和项目业务有关系的。
+    library_network
+        只针对网络基础模块的封装
+    module_main
+        组件main
+
     架构
     1、开发语言 kotlin
     2、组件框架：Arouter
@@ -30,13 +45,12 @@
     3、mmkv                  --- 腾讯key-value组件，替代SharedPreferences
     4、LeakCanary            --- 内存泄漏监控
     5、tbssdk                --- 腾讯 x5 内核浏览器
-    6、EventBus              --- 事件总线
+    6、LiveDataBus           --- 事件总线
     
     待考察
     1、BaseRecyclerViewAdapterHelper --- Adapter封装未使用
     2、permissionx           --- 权限管理未使用
     3、
-    
 
 ## 技术对比
 
@@ -71,11 +85,11 @@
             支持 AndroidStudio 单击跳转
             共享 buildSrc 库工件的引用，全局只有一个地方可以修改它，利于维护
             依赖版本更新将重新构建整个项目
-        3）Composing builds
+        3）Composing builds（各种兼容问题，暂放弃）
             支持 AndroidStudio 自动补全
             支持 AndroidStudio 单击跳转
             全局只有一个地方可以修改它，利于维护
-            依赖版本更新不会重新构建整个项目
+            依赖版本更新不会重新构建整个项目,编译速度比buildSrc快几倍
 
 ## 问题总结
 

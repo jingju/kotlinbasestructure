@@ -1,19 +1,77 @@
-apply from: '../module_build.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+if (ProjectBuildConfig.isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+import com.ht.build.*
 
 android {
+    compileSdkVersion ProjectBuildConfig.compileSdkVersion
+    buildToolsVersion ProjectBuildConfig.buildToolsVersion
     defaultConfig {
-        if (!isRelease) {
-            applicationId appID.main
+        if (!ProjectBuildConfig.isRelease) {
+            applicationId ProjectBuildConfig.main_id
+        }
+        minSdkVersion ProjectBuildConfig.minSdkVersion
+        targetSdkVersion ProjectBuildConfig.targetSdkVersion
+        versionCode ProjectBuildConfig.versionCode
+        versionName ProjectBuildConfig.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+    sourceSets {
+        main {
+            if (ProjectBuildConfig.isRelease) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            }
         }
     }
 }
 
 dependencies {
+    implementation DependencyConfig.AndroidX.CoreKtx
+    implementation DependencyConfig.AndroidX.Appcompat
+    implementation DependencyConfig.AndroidX.Material
+    testImplementation DependencyConfig.AndroidX.Junit
+    androidTestImplementation DependencyConfig.AndroidX.ExtJunit
+    androidTestImplementation DependencyConfig.AndroidX.EspressoCore
+
+    //ConstraintLayout
+    implementation DependencyConfig.AndroidX.ConstraintLayout
+
     //arouter
-    implementation dependenciesID["arouter-api"]
-    implementation dependenciesID["navigation-fragment-ktx"]
-    implementation dependenciesID["navigation-ui-ktx"]
-    kapt dependenciesID["arouter-compiler-kapt"]
+    implementation DependencyConfig.GitHub.ArouterApi
+    implementation DependencyConfig.JetPack.NavigationFragmentKtx
+    implementation DependencyConfig.JetPack.NavigationUiKtx
+    kapt DependencyConfig.GitHub.ArouterCompilerKapt
 
     api project(path: ':library_base')
 }

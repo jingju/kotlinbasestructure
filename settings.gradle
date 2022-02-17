@@ -1,5 +1,0 @@
-rootProject.name = "kotlinbasesture"
-include ':library_network'
-include ':library_base'
-include ':app'
-include ':module_main'
