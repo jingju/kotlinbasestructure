@@ -104,8 +104,8 @@
         3、跨进程数据会出现丢失问题
         4、明文，敏感数据不安全
 <p float="left">
-    <img src="https://github.com/jingju/kotlinbasestructure/feature_architecture/screenshot/sp.png" width="200" height="400"/>
-    <img src="https://github.com/jingju/kotlinbasestructure/feature_architecture/screenshot/mmkv.png" width="200" height="400"/>
+    <img src="https://github.com/jingju/kotlinbasestructure/blob/feature_architecture/screenshot/sp.png" width="200" height="400"/>
+    <img src="https://github.com/jingju/kotlinbasestructure/blob/feature_architecture/screenshot/mmkv.png" width="200" height="400"/>
 </p>
 
 ## 问题总结
