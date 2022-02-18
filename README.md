@@ -93,7 +93,20 @@
             全局只有一个地方可以修改它，利于维护
             依赖版本更新不会重新构建整个项目,编译速度比buildSrc快几倍
     4、mmkv VS sp
-        
+        mmkv
+        1、mmap内存映射实现，数据一次拷贝
+        2、增量更新
+        3、跨进程安全
+        4、Protocol Buffer格式，比明文安全
+        sp
+        1、数据两次拷贝
+        2、全量更新
+        3、跨进程数据会出现丢失问题
+        4、明文，敏感数据不安全
+        <p float="left">
+        <img src="https://github.com/jingju/kotlinbasestructure/feature_architecture/screenshot/sp.png" width="200" height="400"/>
+        <img src="https://github.com/jingju/kotlinbasestructure/feature_architecture/screenshot/mmkv.png" width="200" height="400"/>
+        </p>
 
 ## 问题总结
 

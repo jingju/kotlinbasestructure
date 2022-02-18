@@ -63,6 +63,8 @@ dependencies {
     implementation DependencyConfig.JetPack.RoomRuntime
     kapt DependencyConfig.JetPack.RoomCompilerKapt
     implementation DependencyConfig.JetPack.RoomKtx
+    //mmkv
+    implementation DependencyConfig.GitHub.MMKV
 
     //project
     api project(path: ':library_network')
